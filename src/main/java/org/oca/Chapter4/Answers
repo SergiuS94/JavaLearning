@@ -1,0 +1,42 @@
+*1.B C
+ 2.E,D          NU E A,D
+*3.A,C,D,
+ 4.A,C,F,G            <-Gresit
+ 5.D,F,G              fara F
+ 6.A,D, FARA A
+ 7.C,D,E  SI F!!!
+ 8.B,C,D,F          (D-F NIMEREALA) ->DF gresit, ii E
+*9.C,E
+*10.B
+*11.B,E
+*12.D
+*13.E
+14.B,C   ->Fara C, nu dai tipul parametrilor la import
+*15.E
+*16.B
+17.A,D,E  (nu e A ci B, a-ul din metoda nu schimba referinta lui s1)
+18.C,F  (e G, nu F, ca nu e F am inteles de ce, G e de-a pulea explicat)
+19.A  si G-ul e corect
+20.E,F (F nu e corect, this nu poate fi decat pe prima  linie)
+*21.C
+*22.E(sper ca nu da ca nu compileaza din cauza importului)
+*23.A
+24.C,E  (si B-ul e corect, static poate fi apelat din nestatice!)
+*25.A,E
+*26.A
+27.D (C e corect)
+28.a,c,d,e,f (DOAR A,D,F)
+29.D,F   (A si F corecte)
+
+
+
+de retinut:
+    1)o variabila long nu trebuie sa fie declarata ca 4214L (l-ul poate sa lipseasca) in schimb la float e obligatoriu, altfel default e double
+    2)cand apelezi o metoda trimitand valoarea efectiva (ex 7) va fi considerat default ca int.
+        dar daca 7 il salvez intr-o variabila short, iar eu trimit acea variabila, retine tipul variabilei
+    3)cand e apelata o metoda cu un alt tip de variabila i se poate face cast
+
+
+
+IMUTABIL = STRING
+static String masa = "";

@@ -1,0 +1,6 @@
+Static Interface Methods
+    ->These methods are defined with the static keyword.
+    ->A static method defined in a interface is NOT!!! inherited in any classes that implement the interface
+    Rules:
+        1.Like all methods in an interface, a static method is assumed to be public and will not compile if marked as private or protected
+        2.To reference the static method, a reference to the name of the interface must be used.

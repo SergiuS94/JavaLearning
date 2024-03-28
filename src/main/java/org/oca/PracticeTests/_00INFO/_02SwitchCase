@@ -1,0 +1,15 @@
+->Ce se intampla intr-un switch daca pun defaultul primul?
+    ->nimic, sare in varianta corecta daca exista, altfel in default
+daca nu exista default si nici varianta aleasa definita?
+    ->nu se va rula nimic
+se pune ; la final de case dupa }
+    -> nu: switch(variabila){case 1:{...; break;}}
+
+daca nu pun break?
+    ->va rula incepand cu instructiunea aleasa fiecare case pana la primul break sau la finalul caseului
+
+poti avea un singur default in switch case
+defaultul se poate pune oriunde in intre switchuri, inainte sau dupa
+
+SWITCH NU suport multiple valori pe un rand, ex switch SPRING, SUMMER:
+     switch statements do not support multiple values within a case statement.

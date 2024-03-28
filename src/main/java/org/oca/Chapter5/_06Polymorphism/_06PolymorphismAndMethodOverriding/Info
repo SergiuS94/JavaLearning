@@ -1,0 +1,7 @@
+Polymorphism and Method Overriding
+    1.The first rule is that an overridden method must be at least as accessible as the method it is overriding
+
+    2.A subclass cannot declare an overridden method with a new or broader exception that in the superclass, since the method may be accessed using a reference to the superclass.
+
+    3.Overridden methods must use covariant return types.
+        ->Parentul poate avea return type care e superclasa pentru child(exemplu Number include Double), invers nu merge

@@ -1,0 +1,5 @@
+Default methods or fields can only be accessed from classes in the same package. No keyword is used = default
+
+    /**In the GoodDuckling class we are able to call MotherDuck default fields and methods because we are in the same package
+     * But the same code won't work int swan/BadCyhggnet because we're in different package
+     * */

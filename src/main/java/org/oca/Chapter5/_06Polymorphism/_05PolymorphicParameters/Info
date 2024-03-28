@@ -1,0 +1,7 @@
+Polymorphic Parameters
+    One of the most useful applications of polymorphism is the ability to pass instances of a sublcass or interface to a method.
+    For example, you can define a method that takes an instance of an interface as a parameter.
+    In this manner, any class that implements the interface can be passed to the method. Since you're casting from a subtype to a supertype, an explicit cast is not required.
+    This property is referred to as polymorphic parameters of a method.
+    Ca explicatie scurta: Poti crea o metoda care primeste ca parametru un tip de clasa, de exemplu (Reptile reptile)
+                          in momentul cand apelezi acea metoda tu poti trimite ca parametru un obiect ce e child de-al lui Reptile(vezi _01Example/ZooWorker.class)

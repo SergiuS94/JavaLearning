@@ -1,0 +1,29 @@
+* = corect
+# = gresit
+
+#1.->Corect era F, o clasa final nu poate fi extinsa
+*2.C,F
+*3.C,E
+*4.C
+*5.E
+#6.B->F. There is no modifier that can prevent a default method from being overridden in a class
+      implementing an interface, making option F correct
+*7.B
+#8.D ->era si B, nu am fost atent la chose two
+*9.C,E
+#10.E,F ->era C,F (cod de cct, cine foloseste asa ceva)
+*11.C
+*12.E
+*13.E
+#14.D,E,F   ->B,D,F
+    ->methods cannot be marked final within an interface.
+    ->Interfaces support static methods that are marked public or private
+    ->lack of access modifier makes the method implicitly public, not package-private, making option C incorrect
+#15.C->B(nested inseamna inu in altu)
+#16.C->Gresit, daca trimit un short, ar fi ales int-ul nu object. dupa care, int.toString nu exista, nu compileaza + main nu poate apela metode nestatice
+#17.E->era C, intrebare de cct
+*18.C
+#19.C ->E D-ul, dar nu am facut enumuri, alfel C-ul era corect
+#20.b,c-> ii B,E (defapt super nu are access la var private din parent)
+
+Scor 10/20(50%)

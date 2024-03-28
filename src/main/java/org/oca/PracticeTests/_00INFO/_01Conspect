@@ -1,0 +1,60 @@
+1.Ordinea executiei operanzilor:
+    1.Parantezele: Operațiile din paranteze sunt evaluate întotdeauna înaintea celorlalte.
+    2.Înmulțirea, împărțirea și modulo (%): Aceste operații au precedență mai mare decât adunarea și scăderea.
+    3.Adunarea și scăderea: Aceste operații au o precedență mai mică decât cele menționate mai sus.
+    4.Operatorii relaționali (de exemplu, <, >, <=, >=, ==, !=): Aceștia au o precedență mai mică decât operațiile aritmetice.
+    5.Operatorii logici (de exemplu, &&, ||): Aceștia au o precedență mai mică decât operatorii relaționali.
+
+1b.   /** ^ e XOR(sau exclusiv)
+        * a=0 1 0 1
+        * b=0 0 1 1
+        * r=0 1 1 0
+        * */
+
+2.String vs StringBuilder
+    string-concat       stringbuilder-append
+    la string ++ inseamna new string
+    poti da append dupa finalul stringului, daca e imediat urmatorul index, altfel da erroare
+
+    2a.Operatii pe String:
+        Concatenare: .concat
+        .toLowerCase
+        .toUpperCase
+        .substring (numerotarea e de la 0)
+            ->1 parametru = startindex
+            ->2 parametrii = startindex, endIndex
+        .length
+        .idexOf
+        .charAt
+        .replace / .replaceAll
+        .equals / .equalsIgnoreCase
+        .startsWith / .endsWith
+        .trim -> remove la spatiile de la inceputul sau finalul stringului, nu si la cele dintre cuvinte(sterge si randurile noi de la final sau inceput care-s goale)
+
+    2b.Operatii pe StringBuilder
+        .append
+        .insert
+        .delete (start index, nr de caractere care poate depasi lungimea maxima)
+        .deleteCharAt
+        .reverse
+        .toString
+
+
+3.Float vs Double
+    variabilele default sunt considerate double
+    daca vrem sa fie salvate de tip float, ii facem cast(float) sau adaugam .f / .F la valoarea asignata
+
+4.Lambda Expressions
+    ->daca folosim o variabila nu e obligatoriu sa avem paranteze
+    ->Daca folosim mai multe variabile sau niciuna se adauga paranteze
+    ->Variabilele pot avea tip de date definit sau nedefinit. Conditia e ca ori toate sa aiba, ori niciuna
+    ->Daca folosim acolade avem nevoie de return x; si dupa acolade de ;
+
+
+
+5.Concrete class, reprezinta o clasa care are toate metodele implementate
+    ex, o clasa abstracta e extinsa de n ori. prima clasa care ajunge sa aiba totul implementat e o clasa concreta
+
+6.package private inseamna default( private->default->protected->public)
+
+TODO: StringBuffer?

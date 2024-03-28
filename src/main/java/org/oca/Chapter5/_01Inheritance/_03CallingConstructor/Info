@@ -1,0 +1,1 @@
+When creating a new object, the parent constructor is executed before the child constructor

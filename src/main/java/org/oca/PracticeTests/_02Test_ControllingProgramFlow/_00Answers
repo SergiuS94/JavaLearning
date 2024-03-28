@@ -1,0 +1,55 @@
+* = corect
+# = gresit
+
+#1.FA -> ii B,A
+    A switch statement supports the primitive types byte, short, char, and int and
+    the wrapper classes Character, Byte, Short, and Integer. It also supports String
+    and enumerated types. Finally, it permits var if it can be resolved to one of the previous
+    types. Floating-point types like float and double are not supported
+#2.B -> asta ar fi fost corect, dar codul e scris cu () in loc de {}
+    ^->SAU EXCLUSIV
+    1^1 = 0
+    gas = 1 ->while !1 = 0
+*3.F
+m= 0    n=0
+   1     3
+   2     6
+   3     7
+   3     8
+   3     9
+
+*4.E,B,D (de vazut cum functioneaza List.of(3) )
+*5.D,C
+#6.B =>While accepta doar boolean, nu variabile
+*7.A,F
+#8.A -> Gresit era B ->Gresit again, am 2 de else fara 2 de if sau else if, nu compileaza = D
+#9.C,E ->Gresit, break loop inseamna ca incheie loopul nu ca face jump ->Corect A,E
+*10.A,D
+*11.C
+#12.B -> ii F, lipseste case la fiecare rand
+*13.A
+#14.A,C->posibil si D, dar e undefined type la pre-compile, nu cred ca e allowed la switch ( double nu ii pt ca switch type nu bate cu case)
+    GRESIT, nu poti avea case variabila, cat timp nu e o constanta (sau var final)->Corect e F
+#15.C(defapt is 3(D), m-am grabit si nu m-am uitat la vizibilitatea variabilei)
+#16.D
+*17.B
+#18.A,D(ii si F-ul: Poti avea for definit empty for(;;), exict code nu e definit, nu ai break = loop infinit)
+#19.D->ii c-ul
+    a-5
+    b-5
+    c-5->6
+    d-4->5
+*20.B
+#21.B->Gresit, iful accepta doar boolean rezultat sau input
+#22.C sau F daca nu inteleg intrebarea-> e fals, nu se executa veci al 3-lea tab din for
+#23.D ->se executa cat timp true, nu cat timp false,deci iese si corect e B
+*24.B
+*25.A,C,D
+#26.A ->enum nu face parte din java 8 ->corect e F
+#27.B. In a traditional for loop, only one initialization type is allowed to be specified. If more
+   than one variable is supplied, then they are separated by a comma.
+*28.C
+*29.B
+#30.E->paranteze...D e corect
+
+Rezultat:13/30

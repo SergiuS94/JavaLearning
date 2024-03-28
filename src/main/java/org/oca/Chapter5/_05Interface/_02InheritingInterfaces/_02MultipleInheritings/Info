@@ -1,0 +1,2 @@
+An abstract class can implement interfaces without having to add their methods
+But a simple class that extends an abstract class or implements an interface, it has to implement them
