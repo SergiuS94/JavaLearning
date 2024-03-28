@@ -1,7 +1,6 @@
 package org.oca.Chapter4._01AccessModifiers._02Default.swan;
-import AndreiP.OCA.Chapter4._01AccessModifiers._02Default.duck.MotherDuck;   //we need to import it
 
-
+import org.oca.Chapter4._01AccessModifiers._02Default.duck.MotherDuck;
 
 public class BadCygnet {
     public void makeNoise(){

@@ -1,7 +1,5 @@
 package org.oca.Chapter5._06Polymorphism._05PolymorphicParameters._01Example;
 
-import org.checkerframework.checker.units.qual.A;
-
 public class ZooWorker {
 
     public static void feed(Reptile reptile){

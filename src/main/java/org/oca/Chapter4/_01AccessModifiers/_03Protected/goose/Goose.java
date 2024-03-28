@@ -1,6 +1,6 @@
 package org.oca.Chapter4._01AccessModifiers._03Protected.goose;
 
-import AndreiP.OCA.Chapter4._01AccessModifiers._03Protected.shore.Bird;
+import org.oca.Chapter4._01AccessModifiers._03Protected.shore.Bird;
 
 public class Goose extends Bird {
 

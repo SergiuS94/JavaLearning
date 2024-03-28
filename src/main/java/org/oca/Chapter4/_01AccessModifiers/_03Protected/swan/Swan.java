@@ -1,6 +1,7 @@
 package org.oca.Chapter4._01AccessModifiers._03Protected.swan;
 
-import AndreiP.OCA.Chapter4._01AccessModifiers._03Protected.shore.Bird;
+
+import org.oca.Chapter4._01AccessModifiers._03Protected.shore.Bird;
 
 public class Swan extends Bird {
 
