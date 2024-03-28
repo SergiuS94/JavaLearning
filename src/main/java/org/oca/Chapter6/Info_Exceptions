@@ -1,0 +1,84 @@
+A exception is Java's way to say "I give up".
+
+                        java.lang.Object
+                                ^
+                                |
+                        java.lang.Throwable
+                    ^                              ^
+                    |                              |
+            java.lang.Exception             java.lang.Error
+                    ^
+                    |
+            java.lang.RuntimeException
+
+Error means something went so horribly wrong that your program should not attempt to recover from it.
+A runtime exception is defined as the RuntimeException class and its subclasses. Runtime exceptions tend to be unexpected but not necessarily fatal.
+    ->They are also known as unchecked exceptions.
+A checked exception includes Exception and all subclasses that do not extend RuntimeException.
+    ->Checked exceptions tend to be more anticipated, for example, trying to read a file that doesn't exist.
+    ->For checked exceptions, Java requires the code to either handle them or declare them in the method signature.
+    ->For example, this method declares that it might throw an exception:
+        void fall() throws Exception{
+            throw new Exception();
+        }
+    ->There we have two new keywords:
+        *throw: tells Java that you want to throw an Exception
+        *throws:declares that the method might throw an Exception. It also might not
+
+Types of exception table:
+
+    Type                            How to recognize                                                       OK for program to catch?     Is the program required to handle or declare?
+    Runtime exception               Subclass of RuntimeException                                                    Yes                                     No
+    Checked exception               Subclass of exception but not subclass of RuntimeException                      Yes                                     Yes
+    Error                           Subclass of Error                                                               No                                      No
+
+
+Using a try Statement
+    The try statement is used to handle exceptions. Java uses a try statement to separate the logic that might throw an exception from the logic to handle that exception.
+        try{
+            //The try block is also referred to
+            //as protected code
+        }catch(exception_type identifier){
+            //exception handler
+        }
+    !The braces are mandatory for try and catch even if there is only 1 statement inside the code blocks!
+
+Finally
+     There are two paths for finally to be executed:
+         1.If an exception is thrown, the finally block is run after the catch block
+         2.If no exception is thrown, the finally block is run after the try block completes
+     !!!A try must be followed by a catch AND/OR Finally! IF both are present, catch comes before finally
+
+System.exit(0)
+    ->Will stop the program when is called, no matter if it has a catch or finally block after it
+
+Multiple Catch
+    You can catch multiple exceptions by using
+         * try{}
+         * catch(ExceptionType1 e){}
+         * catch(ExceptionType2 e){})
+         * The rule here is that the first exception cannot be a superclass of the second because the second will never be called, and we will have a compiler error at the
+         * second catch. The run order for the catches is the order they are written in
+    !At most one catch block will run and it wil be the first catch block that can handle it
+
+
+Calling Methods that Throw Exceptions
+    If you call a method that throws an exception, your current method has to throw the same Exception or a parent of the Exception
+        or you can fit the code inside a try /catch, but the catch must use the same or equivalent Exception
+
+    !!!you can't catch a exception defined by you for a called method if that method doesn't throw that specific exception
+    !!!but you're free to try and catch generic exceptions
+        class NoMoreCarrotsException extends Exception{};
+        public class Bunny {
+
+            public static void main(String[] args) {
+                try {
+                    eatCarrot();
+        //        }catch (NoMoreCarrotsException ex){}//This doesn't compile because eatCarrot doesn't use this exception
+                }catch (Exception ex){}//but you can still try to catch generic exceptions
+            }
+            private static void eatCarrot() {}
+        }
+
+Subclasses/Overriding
+    When a class overrides a method from the superclass or implements a method from an interface, it's not allowed to add new checked exceptions th the method signature

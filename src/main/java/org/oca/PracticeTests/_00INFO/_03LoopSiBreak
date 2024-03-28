@@ -1,0 +1,11 @@
+  loop:// Labels are used to specify a particular loop or block of code that can be targeted with the break or continue statements.
+        do{
+            race +="x";
+            break loop;
+        }while (true);
+   labelul nu poate sa apara fara a fi urmat de un bloc, sau linie de cod(exceptie declarare variabile)
+        ex: loop2: si atat, trebuie urmat de bloc {} sau de structura repetitiva sau de o linie de cod
+   break loop;: This break statement is labeled with loop, and it breaks out of the loop with the label loop. It effectively exits the loop after the first iteration.
+
+   Extra: loop e vizibil doar de codul imediat urmator(sau de blocul)
+        daca as baga intre codul de sus (intrte do si loop) un sout, break loop nu ar mai compila

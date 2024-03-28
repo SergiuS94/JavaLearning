@@ -1,0 +1,3 @@
+->If a class doesn't have a constructor java will automatically create an empty constructor inside it
+        ->If a java constructor(even if empty) doesn't have as a first statement super(), java will automatically add it
+So Donkey, Donkey2 and Donkey3 are equivalent because the compiler will automatically convert them all like in Donkey3

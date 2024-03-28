@@ -1,0 +1,19 @@
+All java classes extend directly or indirectly java.lang.Object
+    ->If the class doesn't extend anything the compiler will add that part from above
+    ->If it already extend something, at some point a class won't extend anything and it will have java.lang.Object extended
+    ->So all classes extend java.lang.Object, and this class is the only one that doesn't extend anything
+
+Constructors
+    ->In java, in order to call another constructor from the same class we use the keyword 'this'
+    ->to call the constructor from the extended class we will use the keyword 'super'
+        !!!super can only be used if it is the first statement of the class!
+    ->If a class doesn't have a constructor java will automatically create an empty constructor inside it
+        ->If a java constructor(even if empty) doesn't have as a first statement super(), java will automatically add it
+    Rules:
+        1.The first statement of every constructor is a call to another constructor within the class using this(), or a call to a constructor from the parent class using super()
+        2.The super() call may not be used after the first statement of the constructor
+        3.If no super() is declared in a constructor, java will insert a no-argument super() as the first statement of the constructor
+        4.If the parent doesn't have a no-argument constructor and the child doesn't define any constructor, the compiler will throw an error
+        5.If the parent doesn't have a no-argument constructor, the compiler requires an explicit call to a parent constructor in each child constructor
+
+    When creating a new object, the parent constructor is executed before the child constructor

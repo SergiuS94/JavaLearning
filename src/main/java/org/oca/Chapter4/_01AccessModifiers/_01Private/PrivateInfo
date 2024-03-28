@@ -1,0 +1,5 @@
+private   ->private methods or fields can only be accessed in the same class
+
+
+In this example we have the FatherDuck class with private methods and fields
+Trying to access them from BadDuckling class(in the same package) won't work, because we are in different classes and private doesn't allow us to use those fields

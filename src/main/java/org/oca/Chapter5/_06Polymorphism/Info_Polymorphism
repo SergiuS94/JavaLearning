@@ -1,0 +1,71 @@
+Java supports polymorphism, the property of an object to take on many different forms.
+A java object may be accessed using a reference with the same type as the object, a reference that is a superclass of the object
+    or a reference that defines an interface the object implements, either directly or through a superclass.
+Furthermore, a cast is not required if the object is being reassigned to a super type or interface of the object.
+
+Object vs Reference
+    ->In java, all objects are accessed by reference, so you never have direct access to the object itself.
+    ->Conceptually, you should consider the object as the entity that exists in memory, allocated by the Java runtime environment.
+    ->Regardless of the type of the reference you have for the object in memory, the object itself doesn't change
+    ex:
+        Since all objects inherit java.lang.Object we can reassign our objects like in the example:
+        Lemur lemur = new Lemur();
+        Object lemurAsObject = lemur;
+        ->Lemur object has beena assigned a reference with a different type, the object itself has not changed and still exists as
+            a Lemur object in the memory.
+            !!What has changed is our ability to access methods within the Lemur class with the lemurAsObject reference.
+                ->Without explicit cast back to lemur we no longer have access to the Lemur properties
+        We can summarize in two rules:
+        1.The type of the object determines which properties exist within the object in memory
+        2.The type of the reference to the object determines which methods and variables are accessible to the Java program
+
+Casting objects
+        By changing the reference type for our lemur object (_01Primate) we lost access to more specific methods defined in the subclass
+        We can reclaim those references by casting the object back to the specific subclass it came from:
+            _01Primate primate = lemur;
+           // _03Lemur lemur2 = primate;//Doesn't compile without casting.
+            _03Lemur lemur3 = (_03Lemur) primate; //cast back to _03Lemur the _01Primate object
+            System.out.println(lemur3.age);
+    Rules:
+        1.Casting an object from a subclass to a superclass doesn't require an explicit cast.
+        2.Casting an object from a superclass to a subclass requires an explicit cast.
+        3.The compiler will not allow casts to unrelated types.
+        4.Even when the code compiles without issue, an exception may be thrown at runtime if the object being cast is not actually an instance of that class.
+
+        !!Rule 3 examples in _02 and _03RelatedHierarchy, read them again!
+
+Virtual Methods:
+    The most important feature of polymorphism and one of the primary reasons we have class structure at all is to support virtual methods.
+    A virtual Method is a method in which the specific implementation is not determined until runtime.
+    In fact, all non-final, non-static and non-private Java methods are considered virtual methods, since any of them can be overridden at runtime.
+    What makes a virtual method special in Java is that if you call a method on an object that overrides a method, you get the overridden method, even if the
+        call to the method is on a parent reference or within the parent class.
+
+
+Polymorphic Parameters
+    One of the most useful applications of polymorphism is the ability to pass instances of a sublcass or interface to a method.
+    For example, you can define a method that takes an instance of an interface as a parameter.
+    In this manner, any class that implements the interface can be passed to the method. Since you're casting from a subtype to a supertype, an explicit cast is not required.
+    This property is referred to as polymorphic parameters of a method.
+    Ca explicatie scurta: Poti crea o metoda care primeste ca parametru un tip de clasa, de exemplu (Reptile reptile)
+                          in momentul cand apelezi acea metoda tu poti trimite ca parametru un obiect ce e child de-al lui Reptile(vezi _01Example/ZooWorker.class)
+
+Polymorphism and Method Overriding
+    1.The first rule is that an overridden method must be at least as accessible as the method it is overriding
+
+    2.A subclass cannot declare an overridden method with a new or broader exception that in the superclass, since the method may be accessed using a reference to the superclass.
+
+    3.Overridden methods must use covariant return types.
+        ->Parentul poate avea return type care e superclasa pentru child(exemplu Number include Double), invers nu merge
+
+
+Extra:
+    -Java classes follow a multilevel single-inheritance pattern in which every class has exactly one direct parent class, with all classes eventually inheriting from java.lang.Object
+    -Inheriting a class gives you access to all of the public and protected methods of the class but special rules for constructors and overriding methods must be followed
+    ->If the parent class doesn't include a no-argument constructor, an explicit call to a parent constructor must be provided in the child's contructor
+    -Remember the concept of overloading, overriding, and hidden methods and how they differ. Also we had variables hiding
+    -Abstract classes and interfaces showed how we can use them to define a platform for other users to interact with
+        -by definition, an abstract type cannot be instantiated directly and requires a concrete subclass for the code to be used.
+        -!!!Since default and static interface methods are new to Java8, expect to see at least one question on them on the exam.
+    -Objects can be accessed in a variety of forms.
+        ->Make sure you understand when casts are needed for accessing objects, and to be able to spot the difference between compile-time and runtime cast problems.

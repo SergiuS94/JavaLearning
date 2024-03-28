@@ -1,0 +1,6 @@
+By inheriting a class, you can use its methods in your new class
+    a)directly
+    b)using this. keyword
+    c)using super. keyword
+
+    !you cant use super for methods or variable that are from the current class, it won't compile

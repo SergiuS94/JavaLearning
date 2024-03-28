@@ -1,0 +1,105 @@
+Runtime Exceptions
+    Runtime Exceptions extend RuntimeException. They don't have to be handled or declared. They can be thrown by the programmer or by the JVM
+    Examples:
+        *ArithmeticException              -> Thrown by the JVM when code attempts to divide by zero
+        *ArrayIndexOutOfBoundsException   -> Thrown by the JVM when code uses an illegal index to access an array
+        *ClassCastException               -> Thrown by the JVM when an attempt is made to cast an exception to a subclass of which it is not an instance
+        *IllegalArgumentException         -> Thrown by the programmer to indicate that a method has been passed an illegal or inappropriate argument
+        *NullPointerException             -> Thrown by the JVM when there is a null reference where an object is required
+        *NumberFormatException            -> Thrown by the programmer when an attempt is made to convert a string to a numeric type but the string doesn't have an appropriate
+                                             format
+
+
+    #ArithmeticException
+        ->trying to divide an int by zero: int answer = 11/0;
+        ->Exception in thread "main" java.lang.ArithmeticException: / by zero
+
+    #ArrayIndexOutOfBoundsException
+        int[] count = new int[3];
+        System.out.println(count[-1]); //wrong index
+            Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
+
+        System.out.println(count[3]); //wrong index(valid index 0-2)
+            Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
+
+    #ClassCastException
+        String type = "moose";
+        Integer number = (Integer) type; //This example doesn't compile
+        --------------------------------------
+        String type = "moose";
+        Object obj = type;
+        Integer obj = (Integer) obj;
+        ->The compiler sees a cast from Object to Integer. This could be ok. The compiler doesn't realize there's a String in that Object. When the code runs we get:
+            Exception in thread "main" java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+
+    #IllegalArgumentException
+        ->thrown by the programmer
+        ex:
+        public static void setNumberEggs(int numEggs){
+            if(numEggs < 0)
+                throw new IllegalArgumentException("# eggs must not be negative");
+            this.numberEggs = numberEggs;
+        }
+        ->The program throws an exception when it's not happy with the parameter values. The output looks like this:
+            Exception in thread "main" java.lang.IllegalArgumentException: # eggs must not be negative
+
+    #NullPointerException
+        Instance variables and methods must be called on a non-null reference.
+        If the reference is null, the JVM will throw NullPointerException.
+        In this example, the instance variable default to null:
+
+        String name;
+        public void printLength() throws NullPointerException{
+            System.out.println(name.length());
+        }
+
+        It will result in this output:
+            Exception in thread "main" java.lang.NullPointerException
+
+    #NumberFormatException
+        ->is a subclass of IllegalArgumentException
+        Integer.parseInt("abc"); //you can't convert this String to int, because abc is not numeric. It will result in:
+            Exception in thread "main" java.lang.NumberFormatException: for input string:"abc"
+
+Checked Exceptions
+    Checked Exception have Exception in their hierarchy but not RuntimeException. They must be handled or declared. They can be thrown by the programmer or by the JVM.
+    Common runtime exceptions include the following:
+        *FileNotFoundException -> Thrown programmatically when code tries to reference a file that does not exist.(Subclass of IOException)
+        *IOException           -> Thrown programmatically when there's a problem reading or writing a file
+
+
+Errors
+    Errors extend the Error class. They are thrown by the JVM and should not be handled or declared. Errors are rare, but you might see these:
+        *ExceptionInInitializerError    ->Thrown by the JVM when a static initializer throws an exception and doesn't handle it
+        *StackOverflowError              ->Thrown by the JVM when a method calls itself too many times(called infinite recursion because the method calls itself without an end)
+        *NoClassDefFoundError           ->Thrown by the JVM when a class that the code uses is available at compile time but not runtime
+
+        #ExceptionInInitializerError
+            Java runs static initializers the first time a class is used.
+            If one of the static initializers throws an exception, Java can't start using the class. It declares defeat by throwing an ExceptionInInitializerError.
+            Example:
+                static{
+                    int[] countsOfMoose = new int[3];
+                    int num = countsOfMoose[-1];
+                }
+                public static void main(String[] args){}
+
+            This code yields information about two exceptions:
+                Exception in thread "main" java.lang.ExceptionInInitializerError
+                Caused by: java.lang.ArrayIndexOutOfBoundsException: -1
+
+            !We get the ExceptionInInitializerError because the error happened in a static initializer. That information alone wouldn't be useful in fixing the problem.
+            That's why Java also tells us the original cause of the problem(ArrayIndexOutOfBoundsException)
+            !The ExceptionInInitializerError is an error because Java failed to load the whole class. This failure prevents Java from continuing.
+
+        #StackOverflowError (infinite loop)
+            public static void doNotCodeThis(int num){
+                doNotCodeThis(1);
+            }
+            The output contains this line:
+                Exception in thread "main" java.lang.StackOverflowError
+
+
+
+        #NoClassDefFoundError
+            ->not used for OCA, I just need to know that this is an error

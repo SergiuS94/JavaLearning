@@ -1,0 +1,5 @@
+Inheriting a class grant us access to the public and protected members of the parent class, but also sets the stage for collisions between methods defined in both the
+    parent and subclass
+
+    A final method can't be override
+    A variable can't be override, instead you can hide it by creating a variable with the same name in the child class.You can still access the parent variable using super

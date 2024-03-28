@@ -1,0 +1,35 @@
+* = corect
+# = gresit
+
+*1.CA
+*2.A   (total = meal + (tip--))
+*3.A (desi nu e OCA 8)
+#4.C (tot OCA 11, depinde daca il ia ca stringbuilder sau ca string), crect D:nu este reverse la String, deci il lua ca String
+#5.B(Gresit-> de verificat == la stringbuilder) corect D, == la sb verifica continutul
+#6.F, gresit, ii E
+*7.A(String concat, SB - append)
+*8.B,E (e nu face parte din oca 8)
+#9.Ordinea executiei operanzilor !? -> Corect era AB
+#10.E ->Corect e D
+*11.B
+*12.B
+*13.A
+#14.B->cred ca e gresit, trebuie initializat  ->Corect era E
+#15.A,D   ->Doar A
+*16.C
+*17.C
+#18.D->Gresit, variabilele satice pot fi scrise in metode nonstatice, dar variabilele nestatice nu pot fi scrise in metode statice ->Corect era A
+*19.D
+*20.D
+#21.B->(era C)poti da insert la final. Pe langa, raspunsul e gresit pentru ca .insert incearca sa se foloseasca de variabila sb care inca nu e initializata. eroare compilare
+*22.C
+*23.A
+#24.D->de citit valorile default pentru variabile   ->Corect era C
+*25.A
+*26.A
+*27.D
+*28.E
+#29.E->gresit, e B. ReplaceAll merge pe array
+#30.B->era D, valoarea din stringbuilder nu e modificata
+
+Rezultat 18/30

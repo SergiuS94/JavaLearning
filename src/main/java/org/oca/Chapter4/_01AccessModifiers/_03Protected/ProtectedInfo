@@ -1,0 +1,40 @@
+Protected methods or fields can only be called from classes in the same package or sublcasses
+
+
+In this example we created the Bird class in shore pkg
+In the same package we have BirdWatcher class that is able to call the methods and fields from Bird, because they're in the same Package
+Also, in package goose, class Gosling, we can use the same methods and fields because that class extends Bird and the fields are protected
+
+When we try to call them from package inland/BirdWatcherFromAfar, it doesn't compile because the fields are protected and not visible outside
+    of the package if the class is not extended.
+
+
+
+!!!Trick 1
+    /**Now we create a Swan class in the swan package.
+     * We are not in the same package as Bird, but we are extending it
+     * it means that the Swan class ond Swan objects are able to use the protected methods and fields from Bird
+     * On line 10,11 we are directly calling those methods
+     * On line 14,15 we have an object of Swan that calls the methods, and in this class the Swan class or objects are allowed to do that
+     * On line 21,22 we have a Bird object. The Bird object has no access in this class to call those methods or fields
+     * Because we are not in the same package and there only the class and Swan objects are allowed to use  the protected fields from Bird
+     * */
+
+!!!Tricky2
+    /**Now we create a Goose class in the goose package.
+     * We are not in the same package as Bird, but we are extending it
+     * it means that the Goose class ond Goose objects are able to use the protected methods and fields from Bird
+     * On line 9,10 we have an object of Swan that calls the methods, and in this class the Swan class or objects are allowed to do that
+     * On line 14,15 we have a Goose object but it is stored in a Bird reference
+     * We are not allowed to refer to members of hte Bird class since we are not in the same package and Bird is not a subclass of Bird
+     * Because we are not in the same package and there only the class and Swan objects are allowed to use  the protected fields from Bird
+     * */
+
+
+!!!Tricky3
+    /**goose/GooseWatcher
+     * In this example the code will not compile because we are not in the Goose class
+     * floatInWatter is declared in Bird as protected
+     * GooseWatcher is not in the same package as Bird, nor extend Bird.
+     * Goose extends Bird. That only let Goose to refer to floatInWater() and not callers of Goose
+     * */

@@ -1,0 +1,22 @@
+*1.B
+*2.E
+*3.A,B,D,E
+*4.C,E
+*5.A,D,E,F
+*6.D
+7.B,C   FARA D
+*8.F
+*9.A
+10.B,E,F ->FARA G, interfetele nu mostenesc java.lang.object( ca poti implementa mai multe interfete, daca toate ar mosteni java lang object, ar insemna ca mostenesti de mai multe ori
+                                                                java lang object, ceea ce nu se poate, poti avea o singura mostenire)
+         ->Both abstract classes and interfaces can be extended with the extends keyword(interfetele se extind intre ele)
+*11.A,D,E(??)
+*12.B
+*13.A
+*14.C ->SE NUMESTE OVERRIDE CAND IMPLEMENTEZI METODELE DIN INTERFATA, doar ca de exemplu o clasa abstracta nu e obligata sa le faca override
+15.CE E CONCRET? B,C,D ->Doar b e corect
+*16.E             poti avea metode final in clase abstracte(nu in interfete), asta inseamna ca nu pot fi suprascrise
+17.C    AR FI CORECT, DACA AR FI CORECT DECLARAT ABSTRACTUL, DAR NU E. NU POTI AVEA BODY LA EL
+*18.E
+*19.A,C,F   ->NULL POATE FI FOLOSIT TRIMIS CA UN OBIECT
+20.D

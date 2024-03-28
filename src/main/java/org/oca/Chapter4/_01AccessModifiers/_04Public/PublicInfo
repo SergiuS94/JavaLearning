@@ -1,0 +1,8 @@
+public    ->This method can be called from any class
+
+
+In this example we have the DuckTeacher class in duck package
+                    and the LostDuckling class in goose package
+
+We can use the methods from DuckTeacher in LostDuckling because they were declared as public.
+So we are allowed to use them in any package or class without inheriting that class.
